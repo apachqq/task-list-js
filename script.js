@@ -11,3 +11,15 @@ priority.onclick = function () {
     }
     priority.classList.toggle('is-important');
 }
+
+form.onsubmit = function (evt) {
+    evt.preventDefault();
+
+    let newTask = document.createElement('li');
+    if (priority.classList.contains('is-important')) {
+        newTask.classList.add('is-important')
+    }
+    newTask.textContent = input.value;
+    input.value = '';
+    list.append(newTask);
+}
